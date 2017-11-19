@@ -41,7 +41,7 @@ public class home extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon("/Users/narissingngam/Downloads/neww.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon("/Users/narissingngam/Desktop/xx.png")); // NOI18N
         jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,7 +49,7 @@ public class home extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(740, 0, 60, 40);
+        jButton2.setBounds(0, 0, 40, 30);
 
         jLabel2.setFont(new java.awt.Font("Savoye LET", 0, 72)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 204, 0));
