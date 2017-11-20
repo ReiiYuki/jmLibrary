@@ -196,7 +196,7 @@ public class login extends javax.swing.JFrame {
           String name = jTextField2_username.getText();
         String pwd = new String(jPasswordField1.getPassword());
         if(name.equals("mint")&&pwd.equals("mint")){
-               new submit().setVisible(true);
+               new recommend().setVisible(true);
                this.dispose();
            }else{
                JOptionPane.showMessageDialog(null, "wrong password");
