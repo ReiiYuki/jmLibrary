@@ -65,7 +65,8 @@ public class recommend extends javax.swing.JFrame {
         setUndecorated(true);
 
         jButton4.setBackground(new java.awt.Color(51, 0, 0));
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setFont(new java.awt.Font("Savoye LET", 0, 30)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 153, 0));
         jButton4.setText("My book");
         jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton4.setFocusable(false);
@@ -79,7 +80,6 @@ public class recommend extends javax.swing.JFrame {
 
         jButton13.setBackground(new java.awt.Color(255, 255, 255));
         jButton13.setForeground(new java.awt.Color(255, 255, 255));
-        jButton13.setIcon(new javax.swing.ImageIcon("/Users/narissingngam/Desktop/xx.png")); // NOI18N
         jButton13.setBorder(null);
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,7 +88,8 @@ public class recommend extends javax.swing.JFrame {
         });
 
         jButton1.setBackground(new java.awt.Color(102, 0, 0));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Savoye LET", 0, 30)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 153, 0));
         jButton1.setText("Recommend");
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -98,7 +99,8 @@ public class recommend extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new java.awt.Color(51, 0, 0));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setFont(new java.awt.Font("Savoye LET", 0, 30)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 153, 0));
         jButton2.setText("New");
         jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +110,8 @@ public class recommend extends javax.swing.JFrame {
         });
 
         jButton3.setBackground(new java.awt.Color(51, 0, 0));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setFont(new java.awt.Font("Savoye LET", 0, 30)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 153, 0));
         jButton3.setText("All");
         jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -116,8 +119,6 @@ public class recommend extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-
-        jButton8.setIcon(new javax.swing.ImageIcon("/Users/narissingngam/Desktop/SH.jpg")); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(255, 153, 153));
 
@@ -132,24 +133,14 @@ public class recommend extends javax.swing.JFrame {
             .addGap(0, 20, Short.MAX_VALUE)
         );
 
-        jButton6.setIcon(new javax.swing.ImageIcon("/Users/narissingngam/Desktop/tw.jpg")); // NOI18N
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
 
-        jButton7.setIcon(new javax.swing.ImageIcon("/Users/narissingngam/Desktop/FB.jpg")); // NOI18N
-
-        jButton9.setIcon(new javax.swing.ImageIcon("/Users/narissingngam/Desktop/Cd.jpg")); // NOI18N
-
-        jButton10.setIcon(new javax.swing.ImageIcon("/Users/narissingngam/Desktop/HP.jpg")); // NOI18N
-
-        jButton11.setIcon(new javax.swing.ImageIcon("/Users/narissingngam/Desktop/DM.jpg")); // NOI18N
-
         jButton12.setBackground(new java.awt.Color(255, 255, 255));
         jButton12.setForeground(new java.awt.Color(255, 255, 255));
-        jButton12.setIcon(new javax.swing.ImageIcon("/Users/narissingngam/Desktop/xx.png")); // NOI18N
         jButton12.setBorder(null);
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,7 +166,7 @@ public class recommend extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5)
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -290,7 +281,7 @@ public class recommend extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6)
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
@@ -334,8 +325,6 @@ public class recommend extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addContainerGap())
         );
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/narissingngam/Desktop/Wooden-table-with-blurred-background/login new.jpg")); // NOI18N
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
 
