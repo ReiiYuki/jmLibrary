@@ -41,8 +41,7 @@ public class home extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon("/Users/narissingngam/Desktop/xx.png")); // NOI18N
-        jButton2.setBorder(null);
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/book/pic/xx.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -82,7 +81,7 @@ public class home extends javax.swing.JFrame {
         jButton1.setBounds(420, 339, 100, 30);
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setIcon(new javax.swing.ImageIcon("/Users/narissingngam/Desktop/Top-view-of-several-vertical-books/home.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/book/pic/home.png"))); // NOI18N
         getContentPane().add(jLabel4);
         jLabel4.setBounds(0, 0, 800, 600);
 
