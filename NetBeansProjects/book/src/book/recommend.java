@@ -8,6 +8,7 @@ package book;
 /**
  *
  * @author narissingngam
+ * @author Tanasorn Tritawisup
  */
 public class recommend extends javax.swing.JFrame {
 

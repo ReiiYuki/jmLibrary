@@ -5,7 +5,11 @@
  */
 package book;
 
+import java.io.FileNotFoundException;
 import java.sql.Connection;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
@@ -13,6 +17,7 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author narissingngam
+ * @author Tanasorn Tritawisup
  */
 public class login extends javax.swing.JFrame {
 
@@ -179,11 +184,11 @@ public class login extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_signActionPerformed
 
-    static        boolean us = false;
+    static boolean us = false;
     static boolean ps = false;
     
     private void jTextField2_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2_usernameActionPerformed
-
+         
         
     }//GEN-LAST:event_jTextField2_usernameActionPerformed
 
@@ -192,14 +197,27 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void submitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitMouseClicked
-          String name = jTextField2_username.getText();
+        String name = jTextField2_username.getText();
         String pwd = new String(jPasswordField1.getPassword());
-        if(name.equals("mint")&&pwd.equals("mint")){
-               new recommend().setVisible(true);
-               this.dispose();
-           }else{
-               JOptionPane.showMessageDialog(null, "wrong password");
-           }
+        try {
+            if(signup.find(signup.readFile(), name, pwd)){
+                new recommend().setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "wrong password");
+            }
+            
+//          String name = jTextField2_username.getText();
+//        String pwd = new String(jPasswordField1.getPassword());
+//        if(name.equals("mint")&&pwd.equals("mint")){
+//               new recommend().setVisible(true);
+//               this.dispose();
+//           }else{
+//               JOptionPane.showMessageDialog(null, "wrong password");
+//           }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+        }
            
         
         

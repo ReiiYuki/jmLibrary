@@ -5,12 +5,14 @@
  */
 package book;
 
+import static book.twilightB.calendar;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
  *
  * @author narissingngam
+ * @author Tanasorn Tritawisup
  */
 public class sherLock extends javax.swing.JFrame {
 
@@ -20,9 +22,11 @@ public class sherLock extends javax.swing.JFrame {
     public sherLock() {
         initComponents();
     }
-    
+            
+            
     public static String name = "Sherlock";
     public static Calendar calendar = new GregorianCalendar();
+    public static String status = "aviable"; 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -152,11 +156,13 @@ public class sherLock extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        saveBook.saveBook(name, name, calendar);
+         calendar.add(Calendar.DATE, +14);
+         status = "booked"; 
+         Book.saveBook(name, status);
     }//GEN-LAST:event_addActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        status = "aviable";
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -192,6 +198,7 @@ public class sherLock extends javax.swing.JFrame {
                 new sherLock().setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

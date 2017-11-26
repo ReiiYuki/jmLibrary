@@ -5,12 +5,14 @@
  */
 package book;
 
+
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
  *
  * @author narissingngam
+ * @author Tanasorn Tritawisup
  */
 public class twilightB extends javax.swing.JFrame {
 
@@ -23,6 +25,8 @@ public class twilightB extends javax.swing.JFrame {
 
     public static String name = "Twilight";
     public static Calendar calendar = new GregorianCalendar();
+    public static Calendar cal = new GregorianCalendar();
+    public static String status = "aviable"; 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -156,17 +160,21 @@ public class twilightB extends javax.swing.JFrame {
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         calendar.add(Calendar.DATE, +14);
-//        saveBook.saveBook(, name, calendar);
+        status = "booked";
+        Book.saveBook(name, status);
+        
     }//GEN-LAST:event_addActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        status = "aviable";
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+  
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 /**
  *
  * @author narissingngam
+ * @author Tanasorn Tritawisup
  */
 public class sign extends javax.swing.JFrame {
 
@@ -126,8 +127,10 @@ public class sign extends javax.swing.JFrame {
         if(pass1.equals(rep)){
             pass = pass1;
             try {
-                UserList.addUser(user, pass);
-                EachUser use = new EachUser();
+                signup.write(user, pass);
+                new login().setVisible(true);
+                this.dispose();
+                
             } catch (IOException ex) {
                 Logger.getLogger(sign.class.getName()).log(Level.SEVERE, null, ex);
             }

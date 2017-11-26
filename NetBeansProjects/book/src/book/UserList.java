@@ -18,10 +18,11 @@ import java.util.Scanner;
 /**
  *
  * @author narissingngam
+ * @author Tanasorn Tritawisup
  */
 public class UserList {
      static List<EachUser> workers = new ArrayList<>();
- private final static File usertext = new File("src/Texts/User.txt");
+ private final static File usertext = new File("src/book/user.txt");
 
  /**
   * import all users from text file and collect in the list
@@ -31,8 +32,9 @@ public class UserList {
   Scanner search = new Scanner(usertext);
   while (search.hasNextLine()) {
    String phrase = search.nextLine().trim();
-   String[] user = phrase.split(";");
-   workers.add(new EachUser(user[0], user[1]));
+   String user = phrase.split(";")[0];
+   String pass = phrase.trim();
+   workers.add(new EachUser(user, pass));
   }
   search.close();
  }

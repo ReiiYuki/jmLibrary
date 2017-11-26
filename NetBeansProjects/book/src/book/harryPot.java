@@ -5,6 +5,7 @@
  */
 package book;
 
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -13,6 +14,7 @@ import java.util.GregorianCalendar;
 /**
  *
  * @author narissingngam
+ * @author Tanasorn Tritawisup
  */
 public class harryPot extends javax.swing.JFrame {
 
@@ -25,6 +27,7 @@ public class harryPot extends javax.swing.JFrame {
 
     public static String name = "Harry Potter";
     public static Calendar calendar = new GregorianCalendar();
+    public static String status = "aviable";
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -157,14 +160,13 @@ public class harryPot extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-
-        
-        
-        
+         calendar.add(Calendar.DATE, +14);
+          status = "booked";
+         Book.saveBook(name, status);   
     }//GEN-LAST:event_addActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        status = "aviable";
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

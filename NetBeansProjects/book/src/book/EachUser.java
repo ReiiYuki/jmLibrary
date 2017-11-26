@@ -8,6 +8,7 @@ package book;
 /**
  *
  * @author narissingngam
+ * @author Tanasorn Tritawisup
  */
 public class EachUser {
     private String user;
@@ -18,9 +19,6 @@ public class EachUser {
   pwd = pass;
  }
 
-    EachUser() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
  /**
   * return user's name
   */

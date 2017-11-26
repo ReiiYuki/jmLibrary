@@ -18,21 +18,20 @@ import java.util.Scanner;
 /**
  *
  * @author narissingngam
+ * @author Tanasorn Tritawisup
  */
-public class saveBook {
+public class Book {
 
-     public static void saveBook(String name, String book, Calendar cal){
+     public static void saveBook(String book, String status){
         try {
              
         File file = new File("src/book/book.txt");
         
-        FileOutputStream ou = new FileOutputStream(file,true); 
-              
-        ou.write(name.getBytes());
-        ou.write(";".getBytes());
+        FileOutputStream ou = new FileOutputStream(file); 
+           
         ou.write(book.getBytes());
         ou.write(";".getBytes());
-        ou.write(cal.toString().getBytes());
+        ou.write(status.getBytes());
         ou.write("\n".getBytes());
         ou.close();
         
@@ -46,21 +45,30 @@ public class saveBook {
 //        ou.write();        
      }    
      
-     static final String FILE = "src/book/book.txt";
-     
+     public static String FILE = "src/book/book.txt";
+        
      public static void readBook(){
-         ClassLoader loader = saveBook.class.getClassLoader();
-         InputStream input = loader.getResourceAsStream(FILE);
+      
          
-         Scanner sc = new Scanner(input);
+         ClassLoader loader = Book.class.getClassLoader();
+         InputStream in = loader.getResourceAsStream(FILE);
+         
+         Scanner scan = new Scanner(in);
 
 		String book = "";
 		
-		while(sc.hasNextLine()){
-			book += sc.nextLine() + "\n";
+		while(scan.hasNextLine()){
+			book += scan.nextLine() + "\n";
 			
 		}
-		sc.close();
+		scan.close();
+                
+                
      }
+     
+     
+     
+     
+     
      
 }

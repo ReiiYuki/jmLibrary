@@ -5,9 +5,12 @@
  */
 package book;
 
+import java.util.Scanner;
+
 /**
  *
  * @author narissingngam
+ * @author Tanasorn Tritawisup
  */
 public class myBook extends javax.swing.JFrame {
 
@@ -148,6 +151,21 @@ public class myBook extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+        Book.readBook();
+        
+        Scanner sc = new Scanner(Book.FILE);
+		String book = "";
+		String status = "";
+
+		
+		while(sc.hasNextLine()){
+			String line = sc.nextLine();
+			book = line.split(";")[0];
+                        System.out.print(book + "                         ");
+			status = line.split(";")[1].trim();
+                        System.out.print(status + "\n");
+		}
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

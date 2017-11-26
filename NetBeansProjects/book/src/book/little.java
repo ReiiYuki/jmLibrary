@@ -5,12 +5,14 @@
  */
 package book;
 
+
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
  *
  * @author narissingngam
+ * @author Tanasorn Tritawisup
  */
 public class little extends javax.swing.JFrame {
 
@@ -23,6 +25,7 @@ public class little extends javax.swing.JFrame {
     
     public static String name = "The Litter Prince";
     public static Calendar calendar = new GregorianCalendar();
+    public String status = "aviable";
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -84,6 +87,11 @@ public class little extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Malayalam MN", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("return");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/book/pic/login new.jpg"))); // NOI18N
 
@@ -138,8 +146,14 @@ public class little extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        // TODO add your handling code here:
+        calendar.add(Calendar.DATE, +14);
+          status = "booked";
+         Book.saveBook(name, status);
     }//GEN-LAST:event_addActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        status = "aviable";
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

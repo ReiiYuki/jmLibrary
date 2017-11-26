@@ -7,10 +7,12 @@ package book;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author narissingngam
+ * @author Tanasorn Tritawisup
  */
 public class cin extends javax.swing.JFrame {
 
@@ -23,6 +25,8 @@ public class cin extends javax.swing.JFrame {
     
     public static String name = "Cinderella";
     public static Calendar calendar = new GregorianCalendar();
+    public static Calendar cal = new GregorianCalendar();
+    public static String status = "aviable"; 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -90,6 +94,11 @@ public class cin extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Malayalam MN", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("return");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/book/pic/login new.jpg"))); // NOI18N
 
@@ -151,13 +160,23 @@ public class cin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        
+        calendar.add(Calendar.DATE, +14);
+         status = "booked";
+         Book.saveBook(name, status);
+         JOptionPane.showMessageDialog(null, "You must return in " + calendar);
     }//GEN-LAST:event_addActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        status = "aviable";
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -170,6 +189,9 @@ public class cin extends javax.swing.JFrame {
                     break;
                 }
             }
+            
+            
+            
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(cin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
@@ -181,6 +203,8 @@ public class cin extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

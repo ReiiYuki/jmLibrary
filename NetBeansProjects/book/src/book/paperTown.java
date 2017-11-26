@@ -11,6 +11,7 @@ import java.util.GregorianCalendar;
 /**
  *
  * @author narissingngam
+ * @author Tanasorn Tritawisup
  */
 public class paperTown extends javax.swing.JFrame {
 
@@ -23,6 +24,7 @@ public class paperTown extends javax.swing.JFrame {
 
     public static String name = "Paper Town";
     public static Calendar calendar = new GregorianCalendar();
+    public static String status = "aviable"; 
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -146,11 +148,13 @@ public class paperTown extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        // TODO add your handling code here:
+        calendar.add(Calendar.DATE, +14);
+        status = "booked";
+         Book.saveBook(name, status);
     }//GEN-LAST:event_addActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        status = "aviable";
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
