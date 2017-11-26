@@ -22,17 +22,19 @@ import java.util.Scanner;
  */
 public class Book {
 
-     public static void saveBook(String book, String status){
+     public static void saveBook(String name, String book, String date){
         try {
              
         File file = new File("src/book/book.txt");
         
-        FileOutputStream ou = new FileOutputStream(file); 
-           
+        FileOutputStream ou = new FileOutputStream(file,true); 
+                
         ou.write(book.getBytes());
-        ou.write(";".getBytes());
-        ou.write(status.getBytes());
-        ou.write("\n".getBytes());
+        ou.write(";            ".getBytes());
+        ou.write(date.getBytes());
+        ou.write(";            ".getBytes());
+        ou.write(name.getBytes());
+        ou.write(";\n".getBytes());
         ou.close();
         
         } catch (IOException e) {
@@ -45,9 +47,9 @@ public class Book {
 //        ou.write();        
      }    
      
-     public static String FILE = "src/book/book.txt";
+     public static String FILE = "book/book.txt";
         
-     public static void readBook(){
+     public static String readBook(){
       
          
          ClassLoader loader = Book.class.getClassLoader();
@@ -62,9 +64,46 @@ public class Book {
 			
 		}
 		scan.close();
-                
+                return book;        
                 
      }
+     
+     public static boolean findBook(String read, String bk){
+        Scanner sc = new Scanner(read);
+            String book = "";
+	    String date = "";
+            String user = "";
+            
+		while(sc.hasNextLine()){
+		    String line = sc.nextLine();                   
+		    book = line.split(";")[0].trim();
+                    if(book.equals(bk)){
+                        return true;
+                    }
+                    date = line.split(";")[1].trim();
+                    user = line.split(";")[2].trim();                   
+		}
+            return false;
+    }
+     
+     public static boolean findDate(String read, String day){
+        Scanner sc = new Scanner(read);
+            String book = "";
+	    String date = "";
+            String user = "";
+            
+		while(sc.hasNextLine()){
+		    String line = sc.nextLine();                   
+		    book = line.split(";")[0].trim();
+                    date = line.split(";")[1].trim();
+                    if(date.equals(day)){
+                        return true;
+                    }
+                    user = line.split(";")[2].trim();
+	                             
+		}
+            return false;
+    }
      
      
      

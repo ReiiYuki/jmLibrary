@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -27,7 +28,7 @@ public class harryPot extends javax.swing.JFrame {
 
     public static String name = "Harry Potter";
     public static Calendar calendar = new GregorianCalendar();
-    public static String status = "aviable";
+
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -160,13 +161,19 @@ public class harryPot extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-         calendar.add(Calendar.DATE, +14);
-          status = "booked";
-         Book.saveBook(name, status);   
+      calendar.add(Calendar.DATE, +14);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd:M:yy");
+       String cl = sdf.format(calendar.getTime());
+        if(Book.findBook(Book.readBook(), name)) {
+            JOptionPane.showMessageDialog(null, "This book are borrowed.");
+        } else {
+            Book.saveBook(login.name, name, cl);
+         JOptionPane.showMessageDialog(null, "You must return in " + cl);
+        }
     }//GEN-LAST:event_addActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        status = "aviable";
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

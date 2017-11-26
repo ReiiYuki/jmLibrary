@@ -5,9 +5,10 @@
  */
 package book;
 
-import static book.twilightB.calendar;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -157,12 +158,18 @@ public class sherLock extends javax.swing.JFrame {
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
          calendar.add(Calendar.DATE, +14);
-         status = "booked"; 
-         Book.saveBook(name, status);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd:M:yy");
+        String cl = sdf.format(calendar.getTime());
+        if(Book.findBook(Book.readBook(),name)) {
+            JOptionPane.showMessageDialog(null, "This book are borrowed.");
+        } else {
+            Book.saveBook(login.name, name, cl);
+         JOptionPane.showMessageDialog(null, "You must return in " + cl);
+        }
     }//GEN-LAST:event_addActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        status = "aviable";
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

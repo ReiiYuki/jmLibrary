@@ -6,8 +6,10 @@
 package book;
 
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,7 +28,7 @@ public class twilightB extends javax.swing.JFrame {
     public static String name = "Twilight";
     public static Calendar calendar = new GregorianCalendar();
     public static Calendar cal = new GregorianCalendar();
-    public static String status = "aviable"; 
+    public static SimpleDateFormat sdf = new SimpleDateFormat("dd:M:yy");
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -160,13 +162,21 @@ public class twilightB extends javax.swing.JFrame {
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         calendar.add(Calendar.DATE, +14);
-        status = "booked";
-        Book.saveBook(name, status);
-        
+
+        String cl = sdf.format(calendar.getTime());
+        if(Book.findBook(Book.readBook(),name)) {
+            JOptionPane.showMessageDialog(null, "This book are borrowed.");
+        } else {
+            Book.saveBook(login.name, name, cl);
+            JOptionPane.showMessageDialog(null, "You must return in " + cl);
+        }      
     }//GEN-LAST:event_addActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        status = "aviable";
+//        if(Book.findDate(Book.readBook()).equals(sdf.format(cal.getTime()))){
+//            
+//        }
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
