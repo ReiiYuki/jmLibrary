@@ -26,7 +26,7 @@ public class function {
 	
 	public static void borrow(String book){
                 if (list.contains(book)) {
-		     JOptionPane.showMessageDialog(null,"This book are borrowed!");
+		     
 		} 
 		list.add(book);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd:M:yyyy");

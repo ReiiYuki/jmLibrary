@@ -5,6 +5,11 @@
  */
 package book;
 
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author narissingngam
@@ -17,7 +22,6 @@ public class sign extends javax.swing.JFrame {
     public sign() {
         initComponents();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -112,14 +116,27 @@ public class sign extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+            
+            
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
-       
-      
+        String user = username.getText();
+        String pass1 = new String(pass.getPassword());
+        String rep = new String(repass.getPassword());
+        String pass = "";
+        if(pass1.equals(rep)){
+            pass = pass1;
+            try {
+                UserList.addUser(user, pass);
+                EachUser use = new EachUser();
+            } catch (IOException ex) {
+                Logger.getLogger(sign.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_passActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
@@ -127,17 +144,19 @@ public class sign extends javax.swing.JFrame {
     }//GEN-LAST:event_exitActionPerformed
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
-        // TODO add your handling code here:
+  
     }//GEN-LAST:event_usernameActionPerformed
 
     private void repassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_repassActionPerformed
-        // TODO add your handling code here:
+
+        
     }//GEN-LAST:event_repassActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

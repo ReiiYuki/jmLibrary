@@ -23,7 +23,8 @@ public class harryPot extends javax.swing.JFrame {
         initComponents();
     }
 
-    
+    public static String name = "Harry Potter";
+    public static Calendar calendar = new GregorianCalendar();
     
     /**
      * This method is called from within the constructor to initialize the form.

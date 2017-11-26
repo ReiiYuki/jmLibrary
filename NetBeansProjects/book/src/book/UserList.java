@@ -75,7 +75,6 @@ public class UserList {
  public static void addUser(String name, String pass) throws IOException {
   usertext.getParentFile().mkdirs();
   BufferedWriter bw = new BufferedWriter(new FileWriter(usertext, true));
-  bw.write(name + ";" + pass);
   bw.newLine();
   bw.close();
   resetUser();

@@ -5,6 +5,9 @@
  */
 package book;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 /**
  *
  * @author narissingngam
@@ -17,6 +20,9 @@ public class cin extends javax.swing.JFrame {
     public cin() {
         initComponents();
     }
+    
+    public static String name = "Cinderella";
+    public static Calendar calendar = new GregorianCalendar();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -145,7 +151,7 @@ public class cin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_addActionPerformed
 
     /**

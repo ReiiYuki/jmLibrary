@@ -5,6 +5,9 @@
  */
 package book;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 /**
  *
  * @author narissingngam
@@ -17,6 +20,9 @@ public class mas extends javax.swing.JFrame {
     public mas() {
         initComponents();
     }
+    
+    public static String name = "The Maze Runner";
+    public static Calendar calendar = new GregorianCalendar();
 
     /**
      * This method is called from within the constructor to initialize the form.

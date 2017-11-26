@@ -5,6 +5,9 @@
  */
 package book;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 /**
  *
  * @author narissingngam
@@ -17,6 +20,9 @@ public class sherLock extends javax.swing.JFrame {
     public sherLock() {
         initComponents();
     }
+    
+    public static String name = "Sherlock";
+    public static Calendar calendar = new GregorianCalendar();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -146,7 +152,7 @@ public class sherLock extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        
+        saveBook.saveBook(name, name, calendar);
     }//GEN-LAST:event_addActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

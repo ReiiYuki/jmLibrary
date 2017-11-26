@@ -5,6 +5,9 @@
  */
 package book;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 /**
  *
  * @author narissingngam
@@ -18,6 +21,9 @@ public class fan extends javax.swing.JFrame {
         initComponents();
     }
 
+    public static String name = "Fantastic Beast";
+    public static Calendar calendar = new GregorianCalendar();
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
