@@ -7,13 +7,17 @@ package book;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -41,11 +45,40 @@ public class Book {
             e.printStackTrace();
         }
  
-//        File file = new File("src/book/book.txt");
-//        
-//        FileOutputStream ou = new FileOutputStream(file,true); 
-//        ou.write();        
      }    
+     
+     public static void remove(String name) throws FileNotFoundException{
+         File FILE = new File("src/book/book.txt"); 
+         String file = new String("book/book.txt");
+         ClassLoader loader = Book.class.getClassLoader();
+         InputStream in = loader.getResourceAsStream(file);
+         
+         Scanner scan = new Scanner(in);
+         
+         ArrayList<String> list = new ArrayList<String>();
+         String line = "";
+         
+         while(scan.hasNextLine()){
+             line = scan.nextLine();
+             if(line.startsWith(name)) continue;
+             list.add(line);
+         }
+         
+         FileOutputStream ou = new FileOutputStream(FILE);
+         
+         for(String temp : list) {
+             try {
+                 ou.write((temp + "\n").getBytes());
+                 
+             } catch (IOException ex) {
+                 Logger.getLogger(Book.class.getName()).log(Level.SEVERE, null, ex);
+             }
+         }
+         
+     }
+     
+     
+     
      
      public static String FILE = "book/book.txt";
         
@@ -68,6 +101,8 @@ public class Book {
                 
      }
      
+     
+     
      public static boolean findBook(String read, String bk){
         Scanner sc = new Scanner(read);
             String book = "";
@@ -80,8 +115,8 @@ public class Book {
                     if(book.equals(bk)){
                         return true;
                     }
-                    date = line.split(";")[1].trim();
-                    user = line.split(";")[2].trim();                   
+//                    date = line.split(";")[1].trim();
+//                    user = line.split(";")[2].trim();                   
 		}
             return false;
     }

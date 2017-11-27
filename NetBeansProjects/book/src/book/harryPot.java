@@ -6,10 +6,14 @@
 package book;
 
 
+import static book.cin.name;
+import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -173,7 +177,11 @@ public class harryPot extends javax.swing.JFrame {
     }//GEN-LAST:event_addActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
+    try {
+                 Book.remove(name);
+             } catch (FileNotFoundException ex) {
+                 Logger.getLogger(cin.class.getName()).log(Level.SEVERE, null, ex);
+             }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
