@@ -7,3 +7,5 @@ mint;1234;
 mint;mint;
  wisa;1234;
  mint;mi;
+ darm;1234;
+ karn;123;

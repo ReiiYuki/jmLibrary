@@ -27,37 +27,37 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jButton1" min="-2" pref="200" max="-2" attributes="0"/>
           <Group type="102" attributes="0">
-              <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
-              <Component id="jButton5" min="-2" pref="90" max="-2" attributes="0"/>
-              <EmptySpace min="260" pref="260" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jButton1" min="-2" pref="200" max="-2" attributes="0"/>
+                  <Component id="jButton13" min="-2" pref="40" max="-2" attributes="0"/>
+              </Group>
+              <Component id="jButton2" min="-2" pref="210" max="-2" attributes="0"/>
+              <EmptySpace min="210" pref="210" max="-2" attributes="0"/>
+              <Component id="jButton4" min="-2" pref="180" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="400" pref="400" max="-2" attributes="0"/>
               <Component id="jButton7" min="-2" pref="90" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
               <Component id="jButton9" min="-2" pref="90" max="-2" attributes="0"/>
-              <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
-              <Component id="jButton10" min="-2" pref="90" max="-2" attributes="0"/>
-              <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
+              <EmptySpace min="250" pref="250" max="-2" attributes="0"/>
               <Component id="jButton11" min="-2" pref="100" max="-2" attributes="0"/>
-              <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
-              <Component id="jButton12" min="-2" pref="90" max="-2" attributes="0"/>
-          </Group>
-          <Component id="jButton13" min="-2" pref="40" max="-2" attributes="0"/>
-          <Group type="102" attributes="0">
-              <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
-              <Component id="jButton14" min="-2" pref="100" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <EmptySpace min="410" pref="410" max="-2" attributes="0"/>
               <Component id="jButton3" min="-2" pref="210" max="-2" attributes="0"/>
           </Group>
           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
           <Group type="102" attributes="0">
-              <EmptySpace min="620" pref="620" max="-2" attributes="0"/>
-              <Component id="jButton4" min="-2" pref="180" max="-2" attributes="0"/>
+              <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
+              <Component id="jButton14" min="-2" pref="100" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
+              <Component id="jButton5" min="-2" pref="90" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <EmptySpace min="220" pref="220" max="-2" attributes="0"/>
@@ -69,37 +69,43 @@
           </Group>
           <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
           <Group type="102" attributes="0">
-              <EmptySpace min="200" pref="200" max="-2" attributes="0"/>
-              <Component id="jButton2" min="-2" pref="210" max="-2" attributes="0"/>
+              <EmptySpace min="570" pref="570" max="-2" attributes="0"/>
+              <Component id="jButton12" min="-2" pref="90" max="-2" attributes="0"/>
           </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="220" pref="220" max="-2" attributes="0"/>
+              <Component id="jButton10" min="-2" pref="90" max="-2" attributes="0"/>
+          </Group>
+          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Component id="jButton1" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jButton5" min="-2" pref="110" max="-2" attributes="0"/>
-                  <Component id="jButton7" min="-2" pref="110" max="-2" attributes="0"/>
+                  <Component id="jButton1" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jButton13" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="jButton2" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jButton4" min="-2" pref="50" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
+              <Component id="jButton7" min="-2" pref="110" max="-2" attributes="0"/>
               <EmptySpace min="70" pref="70" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jButton9" min="-2" pref="110" max="-2" attributes="0"/>
-                  <Component id="jButton10" min="-2" pref="110" max="-2" attributes="0"/>
                   <Component id="jButton11" min="-2" pref="110" max="-2" attributes="0"/>
-                  <Component id="jButton12" min="-2" pref="100" max="-2" attributes="0"/>
               </Group>
           </Group>
-          <Component id="jButton13" min="-2" pref="30" max="-2" attributes="0"/>
+          <Component id="jButton3" min="-2" pref="50" max="-2" attributes="0"/>
+          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
           <Group type="102" attributes="0">
               <EmptySpace min="430" pref="430" max="-2" attributes="0"/>
               <Component id="jButton14" min="-2" pref="100" max="-2" attributes="0"/>
           </Group>
-          <Component id="jButton3" min="-2" pref="50" max="-2" attributes="0"/>
-          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-          <Component id="jLabel2" min="-2" pref="530" max="-2" attributes="0"/>
-          <Component id="jButton4" min="-2" pref="50" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="100" pref="100" max="-2" attributes="0"/>
+              <Component id="jButton5" min="-2" pref="110" max="-2" attributes="0"/>
+          </Group>
           <Group type="102" attributes="0">
               <EmptySpace min="100" pref="100" max="-2" attributes="0"/>
               <Component id="jButton6" min="-2" pref="110" max="-2" attributes="0"/>
@@ -112,7 +118,15 @@
               <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
           </Group>
-          <Component id="jButton2" min="-2" pref="50" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="280" pref="280" max="-2" attributes="0"/>
+              <Component id="jButton12" min="-2" pref="100" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="280" pref="280" max="-2" attributes="0"/>
+              <Component id="jButton10" min="-2" pref="110" max="-2" attributes="0"/>
+          </Group>
+          <Component id="jLabel2" min="-2" pref="530" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>

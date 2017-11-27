@@ -170,15 +170,21 @@ public class harryPot extends javax.swing.JFrame {
        String cl = sdf.format(calendar.getTime());
         if(Book.findBook(Book.readBook(), name)) {
             JOptionPane.showMessageDialog(null, "This book are borrowed.");
+            
+            
         } else {
             Book.saveBook(login.name, name, cl);
          JOptionPane.showMessageDialog(null, "You must return in " + cl);
+          myBook myB = new myBook();
+            myB.setVisible(true);
+            myB.setTextlist("Harry Potter\n");
         }
     }//GEN-LAST:event_addActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
     try {
                  Book.remove(name);
+                 JOptionPane.showMessageDialog(null, "This book is returned already");
              } catch (FileNotFoundException ex) {
                  Logger.getLogger(cin.class.getName()).log(Level.SEVERE, null, ex);
              }
