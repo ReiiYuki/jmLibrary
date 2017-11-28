@@ -5,11 +5,14 @@
  */
 package book;
 
-import static book.signup.readFile;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Reader;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,41 +44,54 @@ public class signup {
             Logger.getLogger(signup.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        
 
         
     }
     
     
-    public static String readFile() throws FileNotFoundException{
-
-         ClassLoader loader = signup.class.getClassLoader();
-         InputStream in = loader.getResourceAsStream(data);
-         
-         Scanner scan = new Scanner(in);
-         
-         if (in == null) {
-		    return "Could not access file "+data;
-		}
-         
-              String read = "";
+    public static String readFile() throws FileNotFoundException, IOException{
+//
+//         ClassLoader loader = signup.class.getClassLoader();
+//         InputStream in = loader.getResourceAsStream(data);
+//         
+//         Scanner scan = new Scanner(in);
+//         
+//         if (in == null) {
+//		    return "Could not access file "+data;
+//		}
+//         
+//              String read = "";
+//              
+//              while(scan.hasNextLine()){
+//                  read += scan.nextLine() + "\n";
+//              }
+//              scan.close();  
+        
+        File file = new File("src/book/user.txt");
+        BufferedReader bf = new BufferedReader(new FileReader(file));
+        String read = "";
+        String line = "";
               
-              while(scan.hasNextLine()){
-                  read += scan.nextLine() + "\n";
+              while((line = bf.readLine()) != null){
+                  read += line + "\n";
               }
-              scan.close();  
+              bf.close();
+        
+
          return read;
+
      }
     
-    
     public static boolean find(String read, String ur, String pw){
-        Scanner sc = new Scanner(read);
+            Scanner sc = new Scanner(read);
             String user = "";
 	    String pass = "";
             
-		while(sc.hasNextLine()){
+		while(sc.hasNextLine()) {
 		    String line = sc.nextLine();                   
 		    user = line.split(";")[0].trim();
-                    if(user.equals(ur)){
+                    if(user.equals(ur)) {
                         pass = line.split(";")[1].trim();
                         if(pass.equals(pw)){
                             return true;
@@ -86,7 +102,9 @@ public class signup {
 		}
                 return false;
     }
+    
 }
+    
     
  
 

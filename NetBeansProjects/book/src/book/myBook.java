@@ -53,14 +53,14 @@ public class myBook extends javax.swing.JFrame {
 
         jButton13.setBackground(new java.awt.Color(255, 255, 255));
         jButton13.setForeground(new java.awt.Color(255, 255, 255));
-        jButton13.setBorder(null);
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/book/pic/xx.png"))); // NOI18N
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton13ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton13);
-        jButton13.setBounds(0, 0, 0, 0);
+        jButton13.setBounds(0, 0, 40, 30);
 
         jButton1.setBackground(new java.awt.Color(51, 0, 0));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
