@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -124,6 +125,9 @@ public class sign extends javax.swing.JFrame {
         String pass1 = new String(pass.getPassword());
         String rep = new String(repass.getPassword());
         String pass = "";
+        
+        
+        
         if(pass1.equals(rep)){
             pass = pass1;
             try {
@@ -134,6 +138,9 @@ public class sign extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(sign.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "please check your password again");
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed

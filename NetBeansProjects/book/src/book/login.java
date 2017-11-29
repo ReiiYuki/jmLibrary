@@ -203,7 +203,7 @@ public class login extends javax.swing.JFrame {
                 new recommend().setVisible(true);
                 this.dispose();
             } else {
-                JOptionPane.showMessageDialog(null, "wrong password");
+                JOptionPane.showMessageDialog(null, "wrong password or username\nplease login again");
             }
            
         } catch (FileNotFoundException ex) {

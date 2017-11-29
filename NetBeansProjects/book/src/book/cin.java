@@ -167,10 +167,10 @@ public class cin extends javax.swing.JFrame {
         SimpleDateFormat sdf = new SimpleDateFormat("dd:M:yy");
         String cl = sdf.format(calendar.getTime());
         if(Book.findBook(Book.readBook(), name)) {
-            JOptionPane.showMessageDialog(null, "This book are borrowed.");
+            JOptionPane.showMessageDialog(null, "This book is borrowed.");
                 
         } else {
-            Book.saveBook(login.name, name, cl);
+            Book.saveBook(login.name, name,cl);
          JOptionPane.showMessageDialog(null, "You must return in " + cl);
           myBook myB = new myBook();
           myB.setVisible(true);

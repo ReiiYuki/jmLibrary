@@ -22,3 +22,5 @@ tong;123;
  3;11;
  mint;77;
 gumint;1;
+ duke;22;
+ duke;123;
