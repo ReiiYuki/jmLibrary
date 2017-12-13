@@ -5,7 +5,10 @@
  */
 package book;
 
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,16 +17,26 @@ import java.util.Scanner;
  */
 public class myBook extends javax.swing.JFrame {
     private static String oldContent;
+    public static String reoldContent;
     private String listKeep;
+    private String returnkeep;
     /**
      * Creates new form mybook
      */
     public myBook() {
         initComponents();
         list.setText(oldContent);
+        returnList.setText(reoldContent);
+     
     }
+    
+   
+    
+    
+    
    public void setOldContent(){
     oldContent = list.getText();
+    reoldContent = returnList.getText();
    }
    
     
@@ -42,11 +55,12 @@ public class myBook extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         list = new javax.swing.JTextArea();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        returnList = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -120,30 +134,37 @@ public class myBook extends javax.swing.JFrame {
         list.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         list.setRows(5);
         getContentPane().add(list);
-        list.setBounds(50, 220, 350, 210);
-        getContentPane().add(jDateChooser1);
-        jDateChooser1.setBounds(550, 110, 210, 26);
+        list.setBounds(30, 230, 290, 210);
+
+        returnList.setColumns(20);
+        returnList.setRows(5);
+        getContentPane().add(returnList);
+        returnList.setBounds(460, 230, 310, 210);
 
         jPanel1.setBackground(new java.awt.Color(255, 153, 153));
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 50, 800, 30);
+        jPanel1.setBounds(0, 50, 800, 20);
 
         jLabel2.setBackground(new java.awt.Color(255, 204, 204));
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Book list");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(50, 160, 220, 40);
-
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Calendar");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(680, 90, 100, 17);
+        jLabel2.setBounds(30, 140, 220, 50);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(50, 190, 130, 10);
+        jPanel2.setBounds(30, 180, 130, 10);
+
+        jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Book returned");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(460, 150, 170, 30);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jPanel3);
+        jPanel3.setBounds(460, 180, 180, 10);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/book/pic/login new.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -183,7 +204,11 @@ public class myBook extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         
-        Book.readBook();
+        try {
+            Book.readBook();
+        } catch (IOException ex) {
+            Logger.getLogger(myBook.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         Scanner sc = new Scanner(Book.FILE);
 		String book = "";
@@ -234,6 +259,14 @@ public class myBook extends javax.swing.JFrame {
         listKeep = listKeep.concat(temp);
         this.list.setText(listKeep);
     }
+    
+    public void reTextList(String temp){
+        returnkeep = returnList.getText();
+        returnkeep = returnkeep.concat(temp);
+        this.returnList.setText(returnkeep);
+    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -241,12 +274,13 @@ public class myBook extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextArea list;
+    private javax.swing.JTextArea returnList;
     // End of variables declaration//GEN-END:variables
 }

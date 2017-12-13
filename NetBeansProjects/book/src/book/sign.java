@@ -66,23 +66,23 @@ public class sign extends javax.swing.JFrame {
                 usernameActionPerformed(evt);
             }
         });
-        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 470, 40));
+        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 470, 40));
 
         pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passActionPerformed(evt);
             }
         });
-        getContentPane().add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 470, 40));
+        getContentPane().add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 470, 40));
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Password :");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Password :");
+        jLabel2.setText("Confirm password :");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
 
         repass.addActionListener(new java.awt.event.ActionListener() {
@@ -90,7 +90,7 @@ public class sign extends javax.swing.JFrame {
                 repassActionPerformed(evt);
             }
         });
-        getContentPane().add(repass, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 470, 40));
+        getContentPane().add(repass, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 470, 40));
 
         exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/book/pic/xx.png"))); // NOI18N
         exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

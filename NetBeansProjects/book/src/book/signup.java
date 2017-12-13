@@ -51,22 +51,7 @@ public class signup {
     
     
     public static String readFile() throws FileNotFoundException, IOException{
-//
-//         ClassLoader loader = signup.class.getClassLoader();
-//         InputStream in = loader.getResourceAsStream(data);
-//         
-//         Scanner scan = new Scanner(in);
-//         
-//         if (in == null) {
-//		    return "Could not access file "+data;
-//		}
-//         
-//              String read = "";
-//              
-//              while(scan.hasNextLine()){
-//                  read += scan.nextLine() + "\n";
-//              }
-//              scan.close();  
+  
         
         File file = new File("src/book/user.txt");
         BufferedReader bf = new BufferedReader(new FileReader(file));

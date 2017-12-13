@@ -5,10 +5,12 @@
  */
 package book;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -82,22 +84,33 @@ public class Book {
      
      public static String FILE = "book/book.txt";
         
-     public static String readBook(){
+     public static String readBook() throws FileNotFoundException, IOException{
       
          
-         ClassLoader loader = Book.class.getClassLoader();
-         InputStream in = loader.getResourceAsStream(FILE);
-         
-         Scanner scan = new Scanner(in);
+//         ClassLoader loader = Book.class.getClassLoader();
+//         InputStream in = loader.getResourceAsStream(FILE);
+//         
+//         Scanner scan = new Scanner(in);
+//
+//		String book = "";
+//		
+//		while(scan.hasNextLine()){
+//			book += scan.nextLine() + "\n";
+//			
+//		}
+//		scan.close();
+//                return book;        
 
-		String book = "";
-		
-		while(scan.hasNextLine()){
-			book += scan.nextLine() + "\n";
-			
-		}
-		scan.close();
-                return book;        
+        File file = new File("src/book/book.txt");
+        BufferedReader bf = new BufferedReader(new FileReader(file));
+        String book = "";
+        String line = "";
+              
+              while((line = bf.readLine()) != null){
+                  book += line + "\n";
+              }
+              bf.close();
+         return book;
                 
      }
      

@@ -7,6 +7,7 @@ package book;
 
 import static book.cin.name;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -154,16 +155,20 @@ public class dog extends javax.swing.JFrame {
         calendar.add(Calendar.DATE, +14);
         SimpleDateFormat sdf = new SimpleDateFormat("dd:M:yy");
         String cl = sdf.format(calendar.getTime());
-        if(Book.findBook(Book.readBook(), name)) {
-            JOptionPane.showMessageDialog(null, "This book are borrowed.");
-            
-            
-        } else {
-            Book.saveBook(login.name, name, cl);
-         JOptionPane.showMessageDialog(null, "You must return in " + cl);
-         myBook myB = new myBook();
-            myB.setVisible(true);
-            myB.setTextlist("A dog purpose\n");
+        try {
+            if(Book.findBook(Book.readBook(), name)) {
+                JOptionPane.showMessageDialog(null, "This book are borrowed.");
+                
+                
+            } else {
+                Book.saveBook(login.name, name, cl);
+                JOptionPane.showMessageDialog(null, "You must return in " + cl);
+                myBook myB = new myBook();
+                myB.setVisible(true);
+                myB.setTextlist("A dog purpose\n");
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(dog.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_addActionPerformed
 
@@ -171,6 +176,9 @@ public class dog extends javax.swing.JFrame {
 try {
                  Book.remove(name);
                  JOptionPane.showMessageDialog(null, "This book is returned already");
+                  myBook myB = new myBook();
+                 myB.setVisible(true);
+            myB.reTextList("return A dog purpose\n");
              } catch (FileNotFoundException ex) {
                  Logger.getLogger(cin.class.getName()).log(Level.SEVERE, null, ex);
              }

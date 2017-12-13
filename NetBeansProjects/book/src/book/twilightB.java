@@ -8,6 +8,7 @@ package book;
 
 import static book.cin.name;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -168,23 +169,30 @@ public class twilightB extends javax.swing.JFrame {
         calendar.add(Calendar.DATE, +14);
 
         String cl = sdf.format(calendar.getTime());
-        if(Book.findBook(Book.readBook(),name)) {
-            JOptionPane.showMessageDialog(null, "This book are borrowed.");
-            
-           
-        } else {
-            Book.saveBook(login.name, name, cl);
-            JOptionPane.showMessageDialog(null, "You must return in " + cl);
-             myBook myB = new myBook();
-            myB.setVisible(true);
-            myB.setTextlist("Twilight\n");
-        }      
+        try {
+            if(Book.findBook(Book.readBook(),name)) {
+                JOptionPane.showMessageDialog(null, "This book are borrowed.");
+                
+                
+            } else {
+                Book.saveBook(login.name, name, cl);
+                JOptionPane.showMessageDialog(null, "You must return in " + cl);
+                myBook myB = new myBook();
+                myB.setVisible(true);
+                myB.setTextlist("Twilight\n");      
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(twilightB.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_addActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 try {
                  Book.remove(name);
                  JOptionPane.showMessageDialog(null, "This book is returned already");
+                 myBook myB = new myBook();
+                 myB.setVisible(true);
+            myB.reTextList("return Twilight\n");
              } catch (FileNotFoundException ex) {
                  Logger.getLogger(cin.class.getName()).log(Level.SEVERE, null, ex);
              }
