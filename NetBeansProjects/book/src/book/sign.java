@@ -125,7 +125,6 @@ public class sign extends javax.swing.JFrame {
         String pass1 = new String(pass.getPassword());
         String rep = new String(repass.getPassword());
         String pass = "";
-        
               
                 if(pass1.equals(rep)){
                     pass = pass1;
@@ -141,8 +140,6 @@ public class sign extends javax.swing.JFrame {
                 else{
                     JOptionPane.showMessageDialog(null, "please check your password again.");
                 }
-            }
-        
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -49,22 +49,33 @@ public class Book {
  
      }    
      
-     public static void remove(String name) throws FileNotFoundException{
+     public static void remove(String name) throws FileNotFoundException, IOException{
          File FILE = new File("src/book/book.txt"); 
          String file = new String("book/book.txt");
-         ClassLoader loader = Book.class.getClassLoader();
-         InputStream in = loader.getResourceAsStream(file);
-         
-         Scanner scan = new Scanner(in);
-         
+//         ClassLoader loader = Book.class.getClassLoader();
+//         InputStream in = loader.getResourceAsStream(file);
+//         
+//         Scanner scan = new Scanner(in);
+//         
          ArrayList<String> list = new ArrayList<String>();
          String line = "";
+//         
+//         while(scan.hasNextLine()){
+//             
+//             line = scan.nextLine();
+//             if(line.startsWith(name)) continue;
+//             list.add(line);
+//         }
+
+         BufferedReader bf = new BufferedReader(new FileReader(FILE));
+         String read = "";
          
-         while(scan.hasNextLine()){
-             line = scan.nextLine();
+         while((line = bf.readLine()) != null){
+             read = line + "\n";
              if(line.startsWith(name)) continue;
-             list.add(line);
+             list.add(read);
          }
+
          
          FileOutputStream ou = new FileOutputStream(FILE);
          
@@ -85,21 +96,6 @@ public class Book {
      public static String FILE = "book/book.txt";
         
      public static String readBook() throws FileNotFoundException, IOException{
-      
-         
-//         ClassLoader loader = Book.class.getClassLoader();
-//         InputStream in = loader.getResourceAsStream(FILE);
-//         
-//         Scanner scan = new Scanner(in);
-//
-//		String book = "";
-//		
-//		while(scan.hasNextLine()){
-//			book += scan.nextLine() + "\n";
-//			
-//		}
-//		scan.close();
-//                return book;        
 
         File file = new File("src/book/book.txt");
         BufferedReader bf = new BufferedReader(new FileReader(file));
