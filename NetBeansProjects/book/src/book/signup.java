@@ -18,7 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ *This class used for write a data into the textfile and read them.
  * @author narissingngam
  * @author Tanasorn Tritawisup
  */
@@ -44,8 +44,7 @@ public class signup {
             Logger.getLogger(signup.class.getName()).log(Level.SEVERE, null, ex);
         }        
     }
-    
-    
+   
     public static String readFile() throws FileNotFoundException, IOException{
   
         
@@ -63,6 +62,7 @@ public class signup {
          return read;
 
      }
+
     
     public static boolean find(String read, String ur, String pw){
             Scanner sc = new Scanner(read);
