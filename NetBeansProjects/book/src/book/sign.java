@@ -126,22 +126,23 @@ public class sign extends javax.swing.JFrame {
         String rep = new String(repass.getPassword());
         String pass = "";
         
-        
-        
-        if(pass1.equals(rep)){
-            pass = pass1;
-            try {
-                signup.write(user, pass);
-                new login().setVisible(true);
-                this.dispose();
-                
-            } catch (IOException ex) {
-                Logger.getLogger(sign.class.getName()).log(Level.SEVERE, null, ex);
+              
+                if(pass1.equals(rep)){
+                    pass = pass1;
+                    try {
+                        signup.write(user, pass);
+                        new login().setVisible(true);
+                        this.dispose();
+                        
+                    } catch (IOException ex) {
+                        Logger.getLogger(sign.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "please check your password again.");
+                }
             }
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "please check your password again");
-        }
+        
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

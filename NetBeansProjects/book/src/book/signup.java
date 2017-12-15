@@ -42,11 +42,7 @@ public class signup {
                     
         } catch (IOException ex) {
             Logger.getLogger(signup.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
-
-        
+        }        
     }
     
     
@@ -87,6 +83,8 @@ public class signup {
 		}
                 return false;
     }
+    
+    
     
 }
     

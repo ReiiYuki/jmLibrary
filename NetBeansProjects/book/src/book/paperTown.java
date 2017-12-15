@@ -6,7 +6,6 @@
 package book;
 
 
-import static book.cin.name;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -32,6 +31,7 @@ public class paperTown extends javax.swing.JFrame {
 
     public static String name = "Paper Town";
     public static Calendar calendar = new GregorianCalendar();
+    public static SimpleDateFormat sdf = new SimpleDateFormat("dd:M:yy");
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -154,12 +154,12 @@ public class paperTown extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-       calendar.add(Calendar.DATE, +14);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd:M:yy");
+        calendar = new GregorianCalendar();
+        calendar.add(Calendar.DATE, +14);
         String cl = sdf.format(calendar.getTime());
         try {
             if(Book.findBook(Book.readBook(), name)) {
-                JOptionPane.showMessageDialog(null, "This book are borrowed.");
+                JOptionPane.showMessageDialog(null, "This book is borrowed.");
                 
                 
             } else {
@@ -175,15 +175,22 @@ public class paperTown extends javax.swing.JFrame {
     }//GEN-LAST:event_addActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-try {
+        try {
+           if(Book.findBook(Book.readBook(), name)){
                  Book.remove(name);
-                 JOptionPane.showMessageDialog(null, "This book is returned already");
+                 JOptionPane.showMessageDialog(null, "Return!");
                  myBook myB = new myBook();
                  myB.setVisible(true);
             myB.reTextList("return Paper Towns\n");
-             } catch (FileNotFoundException ex) {
-                 Logger.getLogger(cin.class.getName()).log(Level.SEVERE, null, ex);
-             }
+           } else {
+            JOptionPane.showMessageDialog(null, "This book is not borrowed");
+           }
+                 
+        } catch (FileNotFoundException ex) {
+                 Logger.getLogger(paperTown.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(paperTown.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
