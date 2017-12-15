@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * This class shows the list of book that user borrow amd return.
  * @author narissingngam
  * @author Tanasorn Tritawisup
  */
