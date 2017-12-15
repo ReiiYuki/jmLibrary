@@ -22,9 +22,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * This class will save and read list of book in text file. Moreover it write method to return a book.
  * @author narissingngam
  * @author Tanasorn Tritawisup
+ * 
  */
 public class Book {
 
